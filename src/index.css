@@ -1,13 +1,175 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #293742;
+  font-family: 'Roboto', 'Open Sans' sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+nav {
+  background-color: #1E333D;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#dsc-logo > img {
+  height: 45px;
+  padding-top: 15px;
+}
+
+
+.nav-link {
+  font-family: 'Roboto', sans-serif;
+  color: #757575 !important;
+}
+
+/*form{
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form button, form h5{
+  margin: 20px 0;
+}*/
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #4285F4;
+  box-shadow: none;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+select:focus:not([readonly])
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+  color: #4285F4 !important;
+}
+
+.form-area {
+  background-color: #293742;
+  
+}
+
+input {
+  color: #EEEFF0;
+}
+
+#bg-login img {
+  width: 100%;
+}
+
+#login-content {
+  padding: 20px;
+  align-content: center;
+  justify-content: center;
+}
+
+form div img {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.tag_details {
+  color: rgb(90, 90, 90);
+  font-family: 'Open Sans', sans-serif;
+  margin-top:5px;
+  padding:5px;
+
+}
+
+#forgot-btn {
+  margin-top: 32px;
+}
+
+#login-btn {
+  margin: 10px;
+  border-radius: 25px;
+  padding: 0px 30px;
+}
+
+#nav-menu {
+  margin-right: 5px;
+}
+
+#nav-user {
+  padding-top: 8.5%;
+  height: 90px;
+  width: 90px;
+  font-size: 42px;
+  margin: 5%;
+}
+
+.dashboard {
+  margin-top: 7%;
+}
+
+.card {
+  background-color: #1E333D;
+  font-family: 'Roboto', sans-serif;
+}
+
+#dashboard-card {
+  /*padding: 20%;*/
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+#dashboard-card div img {
+  padding: 15%;
+  
+}
+
+/*#dashboard-card:after {
+  transform: translateY(2px);
+}*/
+
+#dashboard-card:hover{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14) inset, 0 3px 1px -2px rgba(0,0,0,0.12) inset, 0 1px 5px 0 rgba(0,0,0,0.2) inset;
+}
+
+
+#url {
+  margin-top: 8px;
+}
+
+#project-pic {
+  width: auto;
+}
+
+#member-pic {
+  width: auto;
+}
+
+#member-details {
+  margin-bottom: 5px;
+}
+
+#project-details {
+  margin-bottom: 5px;
+}
+
+.event-summary img{
+  margin-top: 0px;
+}
+
+.datepicker-day-button {
+  color: black;
+}
+/*
+#linkType {
+  display: block;
+}
+
+#category {
+  display: block;
+}*/
