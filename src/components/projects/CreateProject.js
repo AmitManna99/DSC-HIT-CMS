@@ -99,7 +99,7 @@ class CreateProject extends Component {
                   <UploadImage UploadImage={this.UploadImage}/>
 
                   <div className="input-field">
-                    <textarea id="bio" className="materialize-textarea" onChange={this.handleChange}></textarea>
+                    <textarea id="bio" className="materialize-textarea white-text" onChange={this.handleChange}></textarea>
                     <label htmlFor="bio">Project Description</label>
                   </div>
                 </div>

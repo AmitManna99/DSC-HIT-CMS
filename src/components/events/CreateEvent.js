@@ -76,7 +76,7 @@ class CreateEvent extends Component {
                   </div>
 
                   <div className="input-field">
-                    <input type="date" className="datepicker black-text" id="date" onChange={this.handleChangeDate}/>
+                    <input type="date" id="date" onChange={this.handleChangeDate}/>
                     <label htmlFor="date">Event Date</label>
                   </div>
 

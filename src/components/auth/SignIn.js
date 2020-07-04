@@ -26,16 +26,16 @@ class SignIn extends Component {
     return (
       <div className="container">
 
-        <div className="row form-area card">
+        <div className="row form-area card margin-top-80">
           <div className="col m6" id="bg-login"><img src="./assets/img/kit/login_bg.png" alt="login-bg" className="hide-on-small-only"/></div>
 
           <div className="col m6" id="bg-content">
 
-            <form className="white" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
 
               <div className="center">
-                <img src="./assets/img/logos/dsc_header.png" alt="dsc_logo"/>
-                <h4 className="tag_details flow-text"><b>Admin Panel Login</b></h4>
+                <img src="./assets/img/logos/dsc_header_light.png" alt="dsc_logo"/>
+                <h4 className="tag_details flow-text grey-text text-lighten-3"><b>Admin Panel Login</b></h4>
               </div>
 
               <div className="input-field">

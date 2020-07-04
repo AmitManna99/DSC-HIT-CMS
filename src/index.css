@@ -111,6 +111,10 @@ form div img {
   margin-top: 7%;
 }
 
+.margin-top-80 {
+  margin-top: 80px;
+}
+
 .card {
   background-color: #1E333D;
   font-family: 'Roboto', sans-serif;
@@ -163,7 +167,7 @@ form div img {
 }
 
 .datepicker-day-button {
-  color: black;
+  color: white;
 }
 /*
 #linkType {
