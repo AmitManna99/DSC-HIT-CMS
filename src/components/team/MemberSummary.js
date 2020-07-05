@@ -5,7 +5,7 @@ const MemberSummary = ({member, deleteLink}) => {
   const links = member.links.map(link => {
 		return (
 			<div className="" key={link.linkType}>
-				<p className=""> <b>{link.linkType} :</b> {link.link} <span className="right" onClick={() => {deleteLink(link.linkType)}}>x</span></p>
+				<p className=""> <b>{link.linkType} :</b> {link.link} <span className="right red-text" onClick={() => {deleteLink(link.linkType)}}>remove</span></p>
 			</div>
 		);
   });

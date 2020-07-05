@@ -22,7 +22,7 @@ class Dashboard extends Component {
       <div className="dashboard container">
         <div className="row">
 
-          <div className="col s12 m6 l3">
+          <div className="col s6 m6 l3">
             <Link to="/add-event">
             <div className="card" id="dashboard-card">
               <div className="card-image" >
@@ -36,7 +36,7 @@ class Dashboard extends Component {
             </Link>
           </div>
 
-          <div className="col s12 m6 l3">
+          <div className="col s6 m6 l3">
           <Link to="/add-member">
             <div className="card" id="dashboard-card">
               <div className="card-image" >
@@ -50,7 +50,7 @@ class Dashboard extends Component {
             </Link>
           </div>
 
-          <div className="col s12 m6 l3">
+          <div className="col s6 m6 l3">
           <Link to="/add-project">
             <div className="card" id="dashboard-card">
               <div className="card-image" >
@@ -64,7 +64,7 @@ class Dashboard extends Component {
             </Link>
           </div>
 
-          <div className="col s12 m6 l3">
+          <div className="col s6 m6 l3">
           <Link to="/add-resource">
             <div className="card" id="dashboard-card">
               <div className="card-image" >

@@ -14,7 +14,6 @@ const Navbar = (props) => {
     <div>
       <nav className="nav-wrapper">
         <div className="container">
-        <a href="#" data-target="slide-out" className="sidenav-trigger right" id="nav-menu"><i className="material-icons grey-text text-lighten-3">menu</i></a>
           
           <Link to='/' className="brand-logo"><span id="dsc-logo"><img src="./assets/img/logos/dsc_header_light.png" alt="dsc_header" /></span></Link>
           {links}

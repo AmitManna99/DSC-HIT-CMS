@@ -7,7 +7,7 @@ import CreateProject from './components/projects/CreateProject'
 import CreateEvent from './components/events/CreateEvent'
 import CreateResource from './components/resources/CreateResource'
 import CreateMember from './components/team/CreateMember'
-import M from 'materialize-css'
+import M from 'materialize-css/dist/js/materialize'
 
 class App extends Component {
 

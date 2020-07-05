@@ -5,7 +5,7 @@ const ProjectSummary = ({project, deleteLink, deleteSession}) => {
   const sessions = project.sessions.map(session => {
 		return (
 			<div className="" key={session.id}>
-				<p className=""> {session.name} : {session.id} <a className="right" onClick={() => {deleteSession(session.id)}}>x</a></p>
+				<p className=""> {session.name} : {session.id} <a className="right red-text" onClick={() => {deleteSession(session.id)}}>remove</a></p>
 			</div>
 		);
   });
@@ -13,7 +13,7 @@ const ProjectSummary = ({project, deleteLink, deleteSession}) => {
   const links = project.links.map(link => {
 		return (
 			<div className="" key={link.linkType}>
-				<p className=""> <b>{link.linkType} :</b> {link.url} <a className="right" onClick={() => {deleteLink(link.linkType)}}>x</a></p>
+				<p className=""> <b>{link.linkType} :</b> {link.url} <a className="right red-text" onClick={() => {deleteLink(link.linkType)}}>remove</a></p>
 			</div>
 		);
   });

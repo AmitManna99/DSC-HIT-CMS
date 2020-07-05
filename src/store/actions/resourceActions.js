@@ -24,14 +24,18 @@ export const createResource = (resource) => {
     dispatch({ type: 'LOADING' });
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        alert(JSON.stringify(response.data))
-          dispatch({ type: 'LOADED' });
+        console.log(response);
+        if (response.status == 200) {
+          alert(response.data.msg)
+        } else {
+          alert(response)
+        }
+        dispatch({ type: 'LOADED' });
       })
       .catch(function (error) {
         console.log(error);
         alert(error)
-          dispatch({ type: 'LOADED' });
+        dispatch({ type: 'LOADED' });
       });
-    }
-  };
+  }
+};

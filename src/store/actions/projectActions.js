@@ -23,8 +23,12 @@ export const createProject = (project) => {
     dispatch({ type: 'LOADING' });
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        alert(JSON.stringify(response.data))
+        console.log(response);
+        if (response.status == 200) {
+          alert(response.data.msg)
+        } else {
+          alert(response)
+        }
         dispatch({ type: 'LOADED' });
       })
       .catch(function (err) {
