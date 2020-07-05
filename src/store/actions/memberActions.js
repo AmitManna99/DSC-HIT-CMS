@@ -1,5 +1,3 @@
-//import axios from 'axios'
-
 export const createMember = (member) => {
     
     return (dispatch, getState) => {
@@ -19,15 +17,18 @@ export const createMember = (member) => {
         },
         data: data
       };
-  
+      
+      dispatch({ type: 'LOADING' });
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
-          alert("Member Added to Database");
+          alert(JSON.stringify(response.data))
+          dispatch({ type: 'LOADED' });
         })
         .catch(function (err) {
           console.log(err);
-          alert("There is an Error!!\n",err);
+          alert(err)
+          dispatch({ type: 'LOADED' });
         });
   
     }

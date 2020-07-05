@@ -1,8 +1,6 @@
-//import axios from 'axios'
-
 export const createProject = (project) => {
   let id = project.fullName.toLowerCase() + project.category.toLowerCase()
-  id = id.replace(/\s/g,'-')
+  id = id.replace(/\s/g, '-')
 
   return (dispatch, getState) => {
 
@@ -22,14 +20,17 @@ export const createProject = (project) => {
       data: data
     };
 
+    dispatch({ type: 'LOADING' });
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
-        //alert("Event Added to Database");
+        alert(JSON.stringify(response.data))
+        dispatch({ type: 'LOADED' });
       })
       .catch(function (err) {
         console.log(err);
-        //alert("There is an Error!!\n",err);
+        alert(err);
+        dispatch({ type: 'LOADED' });
       });
 
   }

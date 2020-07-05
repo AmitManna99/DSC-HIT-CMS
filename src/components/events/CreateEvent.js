@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createEvent } from '../../store/actions/eventActions'
-//import AddSessions from './AddSessions'
-//import AddLinks from './AddLinks'
 import EventSummary from './EventSummary'
 import { Redirect } from 'react-router-dom'
 import UploadImage from './UploadImage'
-//import { auth } from 'firebase'
 
 class CreateEvent extends Component {
   state = {
@@ -34,7 +31,6 @@ class CreateEvent extends Component {
   }
 
   handleChangeDate = (e) => {
-    console.log(e.target.value)
 
     const date = new Date(e.target.value)
     const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: '2-digit' })

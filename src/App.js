@@ -14,22 +14,16 @@ class App extends Component {
   componentDidMount() {
     let sidenav = document.querySelector('#slide-out');
     M.Sidenav.init(sidenav, { edge: 'right' });
-    let datepicker = document.querySelectorAll('.datepicker');
-    //M.Datepicker.init(datepicker, {});
   }
-  
+
   render() {
 
-    /*window.$(document).ready(function() {
-      window.$('.sidenav').sidenav();
-    });*/
-        
     return (
       <BrowserRouter>
         <div className="App">
           <Navbar />
           <Switch>
-            <Route exact path='/'component={Dashboard} />
+            <Route exact path='/' component={Dashboard} />
             <Route path='/signin' component={SignIn} />
             <Route path='/add-project' component={CreateProject} />
             <Route path='/add-member' component={CreateMember} />

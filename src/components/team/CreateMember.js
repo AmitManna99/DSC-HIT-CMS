@@ -5,7 +5,6 @@ import MemberSummary from './MemberSummary'
 import AddLinks from './AddLinks'
 import { Redirect } from 'react-router-dom'
 import UploadImage from './UploadImage'
-//import { auth } from 'firebase'
 
 class CreateMember extends Component {
   state = {

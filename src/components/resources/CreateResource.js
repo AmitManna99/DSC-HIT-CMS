@@ -4,7 +4,6 @@ import { createResource } from '../../store/actions/resourceActions'
 import ResourceSummary from './ResourceSummary'
 import { Redirect } from 'react-router-dom'
 import UploadImage from './UploadImage'
-//import { auth } from 'firebase'
 
 class CreateResource extends Component {
   state = {
@@ -84,7 +83,6 @@ class CreateResource extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     auth: state.firebase.auth
   }

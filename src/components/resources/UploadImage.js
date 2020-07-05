@@ -11,14 +11,12 @@ class UploadImage extends Component {
   handleChange = (e) => {
     
     let file = e.target.files[0];
-    //console.log(file);
     if(file) {
       let reader = new FileReader();
       reader.addEventListener('load', ()=>{
         this.setState({
           imgSrc: reader.result
-        })
-        
+        })  
       })
       reader.readAsDataURL(file);
     }

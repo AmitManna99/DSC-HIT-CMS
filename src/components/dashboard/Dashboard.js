@@ -4,12 +4,18 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 
+const Loader = () => <div><div className="progress blue accent-3"><div className="indeterminate blue"></div></div></div>;
+
 class Dashboard extends Component {
+
   render() {
 
+    const loading = this.props.loading;
     const {auth} = this.props;
 
-    if (!auth.uid) return <Redirect to='/signin' /> 
+    if (!auth.uid) return <Redirect to='/signin' />
+
+    if (loading) return <Loader />
 
     return (
 
@@ -78,11 +84,11 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    loading: state.loading.loading
   }
 }
 
 export default compose(connect(mapStateToProps))(Dashboard)
-//export default Dashboard

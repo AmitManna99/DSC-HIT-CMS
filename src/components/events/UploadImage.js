@@ -9,7 +9,6 @@ class UploadImage extends Component {
   handleChange = (e) => {
     
     let file = e.target.files[0];
-    //console.log(file);
     if(file) {
       let reader = new FileReader();
       reader.addEventListener('load', ()=>{
@@ -20,8 +19,6 @@ class UploadImage extends Component {
       })
       reader.readAsDataURL(file);
     }
-
-    
     
   }
 

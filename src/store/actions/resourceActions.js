@@ -1,5 +1,3 @@
-//import axios from 'axios'
-
 export const createResource = (resource) => {
 
   return (dispatch, getState) => {
@@ -23,12 +21,17 @@ export const createResource = (resource) => {
       data: data
     };
 
+    dispatch({ type: 'LOADING' });
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
+        alert(JSON.stringify(response.data))
+          dispatch({ type: 'LOADED' });
       })
       .catch(function (error) {
         console.log(error);
+        alert(error)
+          dispatch({ type: 'LOADED' });
       });
     }
   };

@@ -35,7 +35,6 @@ class AddSessions extends Component {
                 </div>
                 <Link className="waves-effect waves-light btn blue accent-3" to="/add-project" onClick={this.handleSubmit}>add session</Link>
             </div>
-
         )
     }
 }

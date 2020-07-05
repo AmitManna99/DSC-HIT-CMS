@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 const Navbar = (props) => {
 
   const { auth } = props;
-  //console.log(props);
   const links = auth.uid ? <NavLinks auth={auth} /> : null;
   const mlinks = auth.uid ? <SideNavLinks auth={auth} /> : null;
   return (
@@ -27,7 +26,6 @@ const Navbar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  //console.log(state)
   return {
     auth: state.firebase.auth
   }

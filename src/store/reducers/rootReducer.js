@@ -1,10 +1,12 @@
 import authReducer from './authReducer'
+import loadReducer from './loadReducer'
 import { combineReducers } from 'redux'
 import { firebaseReducer } from 'react-redux-firebase'
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  firebase: firebaseReducer
+  firebase: firebaseReducer,
+  loading: loadReducer
 });
 
 export default rootReducer

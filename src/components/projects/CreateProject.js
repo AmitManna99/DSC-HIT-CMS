@@ -6,7 +6,6 @@ import AddLinks from './AddLinks'
 import ProjectSummary from './ProjectSummary'
 import { Redirect } from 'react-router-dom'
 import UploadImage from './UploadImage'
-//import { auth } from 'firebase'
 
 class CreateProject extends Component {
   state = {

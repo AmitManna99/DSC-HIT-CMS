@@ -5,17 +5,12 @@ import { signOut } from '../../store/actions/authActions'
 
 const SideNavLinks = (props) => {
 
-  //let user = props.;
-  //console.log(props.auth);
   return (
-    
       <ul id="slide-out" className="sidenav blue-grey darken-4">
         <li><NavLink to='/' className="subheader grey-text text-lighten-3"><b>user : </b> {props.auth.email}</NavLink></li>
         <li><div className="divider grey"></div></li>
         <li><NavLink to='/' className="nav-link grey-text text-lighten-3" onClick={props.signOut}><b>Log Out</b></NavLink></li>
       </ul>
-      
-
   )
 }
 
