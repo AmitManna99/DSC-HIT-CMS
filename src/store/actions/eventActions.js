@@ -14,7 +14,7 @@ export const createEvent = (event) => {
 
     var config = {
       method: 'post',
-      url: 'https://cors-anywhere.herokuapp.com/https://dschit-staging.herokuapp.com/events',
+      url: 'https://dschit-staging.herokuapp.com/events',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

@@ -57,7 +57,7 @@ class CreateResource extends Component {
                     <label htmlFor="description">Description</label>
                   </div>
 
-                  <UploadImage UploadImage={this.UploadImage}/>
+                  <UploadImage UploadImage={this.UploadImage} title={this.state.title}/>
 
                   <div className="input-field">
                     <input type="text" id='link' onChange={this.handleChange} />

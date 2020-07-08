@@ -76,7 +76,7 @@ class CreateEvent extends Component {
                     <label htmlFor="date">Event Date</label>
                   </div>
 
-                  <UploadImage UploadImage={this.UploadImage}/>
+                  <UploadImage UploadImage={this.UploadImage} eventName={this.state.eventName} />
 
                   <div className="input-field">
                     <input type="text" id='fbLink' onChange={this.handleChange} />

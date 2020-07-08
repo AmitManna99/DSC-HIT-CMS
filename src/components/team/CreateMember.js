@@ -85,7 +85,7 @@ class CreateMember extends Component {
                     <label htmlFor="bio">Member Bio</label>
                   </div>
 
-                  <UploadImage UploadImage={this.UploadImage}/>
+                  <UploadImage UploadImage={this.UploadImage} name={this.state.name}/>
 
                   <AddLinks AddLinks={this.AddLinks} />
 

@@ -13,7 +13,7 @@ export const createResource = (resource) => {
 
     var config = {
       method: 'post',
-      url: 'https://cors-anywhere.herokuapp.com/https://dschit-staging.herokuapp.com/resources',
+      url: 'https://dschit-staging.herokuapp.com/resources',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

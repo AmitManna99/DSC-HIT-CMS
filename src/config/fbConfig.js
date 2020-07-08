@@ -1,9 +1,9 @@
 import firebase from 'firebase/app'
-import 'firebase/firestore'
+import 'firebase/storage'
 import 'firebase/auth'
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+var fbConfig = {
     apiKey: "AIzaSyDjheuh11O0InryKfST9Uoaag2n2ZDvuT4",
     authDomain: "dsc-hit-website.firebaseapp.com",
     databaseURL: "https://dsc-hit-website.firebaseio.com",
@@ -14,6 +14,7 @@ var firebaseConfig = {
     measurementId: "G-V9HLSD0EHS"
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(fbConfig);
+const storage = firebase.storage();
 
-export default firebase
+export { storage, firebase as default }

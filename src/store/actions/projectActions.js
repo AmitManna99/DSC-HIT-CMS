@@ -12,7 +12,7 @@ export const createProject = (project) => {
     var data = project;
     var config = {
       method: 'post',
-      url: 'https://cors-anywhere.herokuapp.com/https://dschit-staging.herokuapp.com/projects',
+      url: 'https://dschit-staging.herokuapp.com/projects',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

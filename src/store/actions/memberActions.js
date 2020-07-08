@@ -10,7 +10,7 @@ export const createMember = (member) => {
     var data = member;
     var config = {
       method: 'post',
-      url: 'https://cors-anywhere.herokuapp.com/https://dschit-staging.herokuapp.com/team',
+      url: 'https://dschit-staging.herokuapp.com/team',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

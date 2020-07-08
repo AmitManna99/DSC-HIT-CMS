@@ -1,46 +1,39 @@
 import React, { Component } from 'react';
+import firbase from 'firebase/app';
+import FileUploader from 'react-firebase-file-uploader';
+import { storage } from '../../config/fbConfig'
 
 
 class UploadImage extends Component {
 
   state = {
     displayPicture: "",
-
+    image: ""
   }
 
-  handleChange = (e) => {
-    
-    let file = e.target.files[0];
-    if(file) {
-      let reader = new FileReader();
-      reader.addEventListener('load', ()=>{
+  handleSubmit = filename => {
+    this.setState({
+      image: filename
+    })
+
+    storage.ref(`team/${this.props.name}`).child(filename).getDownloadURL()
+      .then(url => {
         this.setState({
-            displayPicture: reader.result
+          displayPicture: url
         })
+        this.props.UploadImage(this.state);
       })
-      reader.readAsDataURL(file);
-    }
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.UploadImage(this.state);
   }
 
   render() {
     return (
       <div>
 
-        <div className="file-field input-field">
-          <div className="btn">
-            <span>File</span>
-            <input type="file" id="imgSrc" onChange={this.handleChange} />
-          </div>
-          <div className="file-path-wrapper">
-            <input className="file-path validate" type="text" />
-          </div>
-        </div>
-        <a className="waves-effect btn blue accent-3" onClick={this.handleSubmit}>Upload Image</a>
+        <FileUploader
+          accept="image/*"
+          name="image"
+          storageRef={firbase.storage().ref(`team/${this.props.name}`)}
+          onUploadSuccess={this.handleSubmit} />
 
       </div>
     )

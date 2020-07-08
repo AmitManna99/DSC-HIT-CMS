@@ -94,9 +94,9 @@ class CreateProject extends Component {
                       <option value="Web">Web</option>
                     </select>
                   </div>
-
-                  <UploadImage UploadImage={this.UploadImage}/>
-
+                  <div id="url">
+                    <UploadImage UploadImage={this.UploadImage} fullName={this.state.fullName}/>
+                  </div>
                   <div className="input-field">
                     <textarea id="bio" className="materialize-textarea white-text" onChange={this.handleChange}></textarea>
                     <label htmlFor="bio">Project Description</label>
