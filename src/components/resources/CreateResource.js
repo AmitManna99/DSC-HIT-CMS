@@ -22,9 +22,28 @@ class CreateResource extends Component {
     })
   }
 
-  handleChange = (e) => {
+  handleSetId = (e) => {
+
     this.setState({
       [e.target.id]: e.target.value
+    })
+
+    let id = this.state.title.toLowerCase()
+    id = id.replace(/\s/g, '-')
+
+    this.setState({
+      id
+    })
+  }
+
+  handleChange = (e) => {
+
+    let id = this.state.title.toLowerCase()
+    id = id.replace(/\s/g, '-')
+
+    this.setState({
+      [e.target.id]: e.target.value,
+      id
     })
   }
   handleSubmit = (e) => {
@@ -48,7 +67,7 @@ class CreateResource extends Component {
               <div className="card">
                 <div className="card-content white-text">
                   <div className="input-field">
-                    <input type="text" id='title' onChange={this.handleChange} />
+                    <input type="text" id='title' onChange={this.handleSetId} />
                     <label htmlFor="title">Resource Name</label>
                   </div>
 
@@ -57,7 +76,7 @@ class CreateResource extends Component {
                     <label htmlFor="description">Description</label>
                   </div>
 
-                  <UploadImage UploadImage={this.UploadImage} title={this.state.title}/>
+                  <UploadImage UploadImage={this.UploadImage} id={this.state.id}/>
 
                   <div className="input-field">
                     <input type="text" id='link' onChange={this.handleChange} />

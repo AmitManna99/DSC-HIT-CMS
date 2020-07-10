@@ -6,6 +6,7 @@ import AddLinks from './AddLinks'
 import ProjectSummary from './ProjectSummary'
 import { Redirect } from 'react-router-dom'
 import UploadImage from './UploadImage'
+import ProjectSetup from './ProjectSetup'
 
 class CreateProject extends Component {
   state = {
@@ -13,9 +14,10 @@ class CreateProject extends Component {
     id: null,
     bio: "",
     category: "",
-    profilePicture: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRyDIBZIYQGm37vzHiAWlk2ppL6qQDOj1I73g&usqp=CAU",
+    profilePicture: "",
     sessions: [],
-    links: []
+    links: [],
+    step: 1
   }
 
   deleteSession = (id) => {
@@ -38,9 +40,11 @@ class CreateProject extends Component {
 
   UploadImage = (link) => {
     let profilePicture = link.profilePicture
+    let id = link.id
     this.setState({
       ...this.state,
-      profilePicture
+      profilePicture,
+      id
     })
   }
 
@@ -50,33 +54,99 @@ class CreateProject extends Component {
       links
     })
   }
+
   AddSessions = (session) => {
     let sessions = [...this.state.sessions, session]
     this.setState({
       sessions
     })
   }
-  handleChange = (e) => {
+
+  handleChange = input => (e) => {
+
     this.setState({
-      [e.target.id]: e.target.value
+      [input]: e.target.value
     })
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
+    delete this.state.step
     this.props.createProject(this.state);
     this.props.history.push('/');
   }
+
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({ step: step + 1 });
+  };
+
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({ step: step - 1 });
+  };
+
   render() {
 
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/signin' />
 
-    return (
-      <div className="container">
+    const { step } = this.state;
+    const { fullName, id, bio, category, profilePicture, sessions, links } = this.state;
+    const values = { fullName, id, bio, category, profilePicture, sessions, links };
 
+    switch (step) {
+      case 1:
+        return (
+          <ProjectSetup
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 2:
+        return (
+          <UploadImage
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            UploadImage={this.UploadImage}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <AddSessions
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+            AddSessions={this.AddSessions}
+            deleteSession={this.deleteSession}
+          />
+        );
+      case 4:
+        return (
+          <AddLinks
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+            AddLinks={this.AddLinks}
+            deleteLink={this.deleteLink}
+          />
+        );
+      case 5:
+        return (
+          <ProjectSummary 
+          prevStep={this.prevStep}
+          values={values}
+          handleSubmit={this.handleSubmit}/>
+        );
+    }
+    /*return (
+      <div className="container">
+ 
         <form className="form-area" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-lighten-3">Create a New Project</h5>
-
+ 
           <div className="row">
             <div className="col s12 m6">
               <div className="card">
@@ -85,7 +155,7 @@ class CreateProject extends Component {
                     <input type="text" id='fullName' onChange={this.handleChange} />
                     <label htmlFor="fullName">Project Title</label>
                   </div>
-
+ 
                   <div className="grey-text text-lighten-3">
                     <label>Select Project Type</label>
                     <select id="category" onChange={this.handleChange} className="browser-default">
@@ -94,22 +164,23 @@ class CreateProject extends Component {
                       <option value="Web">Web</option>
                     </select>
                   </div>
-                  <div id="url">
-                    <UploadImage UploadImage={this.UploadImage} fullName={this.state.fullName}/>
-                  </div>
+                  
                   <div className="input-field">
                     <textarea id="bio" className="materialize-textarea white-text" onChange={this.handleChange}></textarea>
                     <label htmlFor="bio">Project Description</label>
                   </div>
+                  <div>
+                    <UploadImage UploadImage={this.UploadImage} id={this.state.id}/>
+                  </div>
                 </div>
               </div>
             </div>
-
+ 
             <div className="col s12 m6">
               <ProjectSummary project={this.state} deleteSession={this.deleteSession} deleteLink={this.deleteLink}/>
             </div>
           </div>
-
+ 
           <div className="row">
             <div className="col s12 m6">
               <div className="card">
@@ -118,7 +189,7 @@ class CreateProject extends Component {
                 </div>
               </div>
             </div>
-
+ 
             <div className="col s12 m6">
               <div className="card">
                 <div className="card-content white-text">
@@ -127,13 +198,13 @@ class CreateProject extends Component {
               </div>
             </div>
           </div>
-
+ 
           <div className="input-field right">
             <button className="btn blue accent-3">Create</button>
           </div>
         </form>
       </div>
-    )
+    )*/
   }
 }
 

@@ -4,10 +4,8 @@ export const createResource = (resource) => {
 
     let token = getState().firebase.auth.stsTokenManager.accessToken;
     let user = getState().firebase.auth.email;
-    let id = resource.title.toLowerCase()
-    id = id.replace(/\s/g, '-')
 
-    resource = { ...resource, id: id, createdBy: user }
+    resource = { ...resource, createdBy: user }
     var axios = require('axios');
     var data = JSON.stringify(resource);
 
@@ -25,7 +23,7 @@ export const createResource = (resource) => {
     axios(config)
       .then(function (response) {
         console.log(response);
-        if (response.status == 200) {
+        if (response.status === 200) {
           alert(response.data.msg)
         } else {
           alert(response)

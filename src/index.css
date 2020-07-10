@@ -43,13 +43,60 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #4285F4 !important;
 }
 
+.row {
+  margin-bottom: auto;
+}
 .form-area {
   background-color: #293742;
+  margin-top: 5px;
   
+}
+
+.add-form {
+  margin: 60px 0px;
+  max-width: 500px;
+  width: 100%;
+  display: inline-block;
+} 
+
+.form-content {
+  padding: 10% 0%;
+}
+
+input[type=text]:not(.browser-default) {
+  border: 2px solid #4285F4;
+  border-radius: 5px;
+}
+
+textarea {
+  border: 2px solid #4285F4;
+  border-radius: 5px;
+}
+
+label {
+  margin: 0px 15px;
 }
 
 input {
   color: #EEEFF0;
+}
+
+#next {
+  margin: 10% 0% 5% 10%;
+}
+
+#previous {
+    border: 1px solid;
+    color: #4285F4;
+    background-color: rgba(24, 40, 68, 0.7);
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 10% 10% 5% 0%;
 }
 
 #bg-login img {
@@ -110,6 +157,11 @@ form div img {
   font-family: 'Roboto', sans-serif;
 }
 
+.card-panel {
+  background-color: #1E333D;
+  font-family: 'Roboto', sans-serif;
+}
+
 #dashboard-card {
   width: 100%;
   color: white;
@@ -133,7 +185,7 @@ form div img {
 }
 
 #project-pic {
-  width: auto;
+  width: 180px;
 }
 
 #member-pic {

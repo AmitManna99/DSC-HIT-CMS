@@ -22,7 +22,7 @@ export const createMember = (member) => {
     axios(config)
       .then(function (response) {
         console.log(response);
-        if (response.status == 200) {
+        if (response.status === 200) {
           alert(response.data.msg)
         } else {
           alert(response)

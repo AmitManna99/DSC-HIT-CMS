@@ -4,10 +4,8 @@ export const createEvent = (event) => {
 
     let token = getState().firebase.auth.stsTokenManager.accessToken;
     let user = getState().firebase.auth.email;
-    let id = event.eventName.toLowerCase() + event.date.toLowerCase()
-    id = id.replace(/\s/g, '-')
 
-    event = { ...event, id: id, createdBy: user }
+    event = { ...event, createdBy: user }
 
     var axios = require('axios');
     var data = JSON.stringify(event);
@@ -26,7 +24,7 @@ export const createEvent = (event) => {
     axios(config)
       .then(function (response) {
         console.log(response);
-        if (response.status == 200) {
+        if (response.status === 200) {
           alert(response.data.msg)
         } else {
           alert(response)

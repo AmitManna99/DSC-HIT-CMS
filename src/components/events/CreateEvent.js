@@ -36,8 +36,13 @@ class CreateEvent extends Component {
     const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: '2-digit' })
     const [{ value: month }, , { value: day }, , { value: year }] = dateTimeFormat.formatToParts(date)
 
+    let id = this.state.eventName.toLowerCase() + "-" + month.toLowerCase() + "-" + day + "-" + year
+    var replaceChars={ " ":"-" , ".":"-" };
+    id = id.replace(/[\s,]/g, match => replaceChars[match])
+
     this.setState({
-      date: `${month} ${day}, ${year}`
+      date: `${month} ${day}, ${year}`,
+      id
     })
   }
 
@@ -76,7 +81,7 @@ class CreateEvent extends Component {
                     <label htmlFor="date">Event Date</label>
                   </div>
 
-                  <UploadImage UploadImage={this.UploadImage} eventName={this.state.eventName} />
+                  <UploadImage UploadImage={this.UploadImage} id={this.state.id} />
 
                   <div className="input-field">
                     <input type="text" id='fbLink' onChange={this.handleChange} />

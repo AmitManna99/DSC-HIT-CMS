@@ -1,13 +1,11 @@
 export const createProject = (project) => {
-  let id = project.fullName.toLowerCase() + project.category.toLowerCase()
-  id = id.replace(/\s/g, '-')
 
   return (dispatch, getState) => {
 
     let token = getState().firebase.auth.stsTokenManager.accessToken;
     let user = getState().firebase.auth.email;
 
-    project = { ...project, id: id, createdBy: user }
+    project = { ...project, createdBy: user }
     var axios = require('axios');
     var data = project;
     var config = {
@@ -24,7 +22,7 @@ export const createProject = (project) => {
     axios(config)
       .then(function (response) {
         console.log(response);
-        if (response.status == 200) {
+        if (response.status === 200) {
           alert(response.data.msg)
         } else {
           alert(response)

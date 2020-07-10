@@ -16,7 +16,7 @@ class UploadImage extends Component {
       image: filename
     })
 
-    storage.ref(`team/${this.props.name}`).child(filename).getDownloadURL()
+    storage.ref(`images/team/${this.props.id}`).child(filename).getDownloadURL()
       .then(url => {
         this.setState({
           displayPicture: url
@@ -32,7 +32,7 @@ class UploadImage extends Component {
         <FileUploader
           accept="image/*"
           name="image"
-          storageRef={firbase.storage().ref(`team/${this.props.name}`)}
+          storageRef={firbase.storage().ref(`images/team/${this.props.id}`)}
           onUploadSuccess={this.handleSubmit} />
 
       </div>
