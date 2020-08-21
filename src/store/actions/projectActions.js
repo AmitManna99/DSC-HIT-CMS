@@ -10,7 +10,7 @@ export const createProject = (project) => {
     var data = project;
     var config = {
       method: 'post',
-      url: 'https://dschit-staging.herokuapp.com/projects',
+      url: 'https://dschit.herokuapp.com/projects',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

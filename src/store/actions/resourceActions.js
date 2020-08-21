@@ -11,7 +11,7 @@ export const createResource = (resource) => {
 
     var config = {
       method: 'post',
-      url: 'https://dschit-staging.herokuapp.com/resources',
+      url: 'https://dschit.herokuapp.com/resources',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'

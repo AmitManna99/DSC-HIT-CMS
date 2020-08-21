@@ -12,7 +12,7 @@ export const createEvent = (event) => {
 
     var config = {
       method: 'post',
-      url: 'https://dschit-staging.herokuapp.com/events',
+      url: 'https://dschit.herokuapp.com/events',
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'
