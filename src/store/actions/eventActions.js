@@ -4,8 +4,10 @@ export const createEvent = (event) => {
 
     let token = getState().firebase.auth.stsTokenManager.accessToken;
     let user = getState().firebase.auth.email;
+    let d = new Date();
+    let time_stamp = d.getTime();
 
-    event = { ...event, createdBy: user }
+    event = { ...event, createdBy: user, time_stamp }
 
     var axios = require('axios');
     var data = JSON.stringify(event);
