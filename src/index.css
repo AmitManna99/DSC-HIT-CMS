@@ -1,13 +1,18 @@
 body {
-  margin: 0;
-  background-color: #293742;
-  font-family: 'Roboto', 'Open Sans' sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #1E333D;
+  color: #fffef2;
+  font-family: 'Commissioner', sans-serif;
+}
+
+a {
+  color: #fffef2 !important;
+  cursor: pointer;
 }
 
 nav {
-  background-color: #1E333D;
+  background-color: #1E333D !important;
+  color: #fffef2;
+  font-family: 'Commissioner', sans-serif;
 }
 
 code {
@@ -15,17 +20,25 @@ code {
     monospace;
 }
 
-#dsc-logo > img {
-  height: 45px;
-  padding-top: 15px;
+nav .brand-logo {
+  padding: 0.5rem;
 }
 
+nav {
+  background-color: #1E333D !important;
+  color: #FFFEF2;
+  font-family: 'Commissioner', sans-serif;
+}
 
 .nav-link {
-  font-family: 'Roboto', sans-serif;
-  color: #757575 !important;
+  display: flex;
+  margin: auto 20px;
+  font-weight: 500;
 }
 
+.nav-link i {
+  padding: 2px 10px;
+}
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
@@ -161,22 +174,28 @@ form div img {
   background-color: #1E333D;
   font-family: 'Roboto', sans-serif;
 }
-
 #dashboard-card {
-  width: 100%;
-  color: white;
-  font-weight: 500;
-  letter-spacing: 1.5px;
+  background-color: #1E333D !important;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  margin: 11rem 0.5rem;
 }
 
-#dashboard-card div img {
-  padding: 15%;
-  
+#dashboard-card:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14) inset, 0 3px 1px -2px rgba(0, 0, 0, 0.12) inset, 0 1px 5px 0 rgba(0, 0, 0, 0.2) inset;
 }
 
+#dashboard-card i {
+  font-size: 8rem;
+}
 
-#dashboard-card:hover{
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14) inset, 0 3px 1px -2px rgba(0,0,0,0.12) inset, 0 1px 5px 0 rgba(0,0,0,0.2) inset;
+#dashboard-card span {
+  font-family: 'Commissioner', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 
